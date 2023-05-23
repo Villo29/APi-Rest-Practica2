@@ -6,7 +6,7 @@ export class CreateCars {
     async create(id: number, nombre: string, matricula: string) {
         return this.productoRepository.create(id, nombre, matricula)
             .then((createCars) => {
-                console.log(createCars);
+                console.log([createCars]);
                 return createCars;
             }).catch((error) => {
                 console.log(error);

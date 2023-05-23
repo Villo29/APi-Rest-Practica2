@@ -1,5 +1,5 @@
-import { Producto } from "./Cars-Producto";
+import { vehicle } from "./Cars-Producto";
 export interface ProductoRepository {
-    create(id: number, nombre: string, matricula: string): Promise<Producto>;
-    getCars(): Promise<Producto[] | null>;
+    create(id: number, nombre: string, matricula: string): Promise<vehicle>;
+    getCars(): Promise<vehicle[] | null>;
 }

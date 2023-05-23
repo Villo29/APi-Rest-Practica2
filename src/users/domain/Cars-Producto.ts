@@ -1,4 +1,4 @@
-export interface Producto {
+export interface vehicle {
     id: number;
     nombre: string;
     matricula: string;
