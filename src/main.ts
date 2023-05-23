@@ -1,3 +1,7 @@
+// CARLOS IVAN CRUZ ZARMINETO
+// JESUS DAVID RUIZ GARCIA
+
+
 import "./users/infrastructure/load-env-vars";
 import bodyParser from "body-parser";
 import express from "express";
