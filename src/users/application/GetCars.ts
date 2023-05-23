@@ -4,7 +4,7 @@ export class GetCars {
 
     constructor(readonly carsRepositori: carsRepositori) { }
 
-    async allEmployees() {
+    async getCars() {
         return this.carsRepositori.GetCars()
             .then((carsRepositori) => {
                 console.log(carsRepositori);

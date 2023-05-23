@@ -9,10 +9,10 @@ export class CarsControllers {
 
     getcars = async (req: Request, res: Response) => {
         try {
-            const all = await this.GetCars.GetCars();
-            res.status(200).json(all);
+            const data = await this.GetCars.getCars();
+            res.status(200).json(data);
         } catch (error) {
-            res.status(500).json({ error: "Internal server error" });
+            res.status(500).json({ error: "error del servidor" });
         }
     }
 
@@ -22,7 +22,7 @@ export class CarsControllers {
             const dataproducto = await this.CreateCars.createCar(id, nombre, matricula);
             res.status(200).json(dataproducto)
         } catch (error) {
-            res.status(500).json({ error: "servidor error" })
+            res.status(500).json({ error: "error del servidor" })
         }
     }
 }
