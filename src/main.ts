@@ -1,7 +1,7 @@
-import "./shared/infrastructure/load-env-vars";
+import "./users/infrastructure/load-env-vars";
 import bodyParser from "body-parser";
 import express from "express";
-import { config } from "./shared/infrastructure/config";
+import { config } from "./users/infrastructure/config";
 import { routes } from "./users/infrastructure/RouteProducto";
 
 

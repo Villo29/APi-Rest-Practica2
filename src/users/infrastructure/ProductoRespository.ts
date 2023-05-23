@@ -3,10 +3,21 @@ import { Producto } from '../domain/Cars-Producto'
 import { ProductoRepository } from "../domain/Cars-repository"
 import { QueryError } from 'mysql2'
 
+
 export class carsRepositori implements ProductoRepository {
-  getById(id: string): Promise<Producto | null> {
-    throw new Error('Method not implemented.');
-  }
+  
+  async GetCars(): Promise<Producto[] | null> {
+    const mysql = new database();
+    return await new Promise((resolve, reject) => {
+        mysql.connection.query("SELECT * FROM Estacionamiento.Autos", (error: QueryError, rows: Producto[]) => {
+            if (error) {
+                reject(error);
+            } else {
+                resolve(rows);
+            }
+        });
+    });
+};
 
   async create(id: number, nombre: string,  matricula: string): Promise<Producto> {
     const mysql = new database();
