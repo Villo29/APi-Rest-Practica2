@@ -19,7 +19,7 @@ export class CarsControllers {
     create = async (req: Request, res: Response) => {
         try {
             const { id, nombre, matricula } = req.body
-            const dataproducto = await this.CreateCars.createCar(id, nombre, matricula);
+            const dataproducto = await this.CreateCars.create(id, nombre, matricula);
             res.status(200).json(dataproducto)
         } catch (error) {
             res.status(500).json({ error: "error del servidor" })

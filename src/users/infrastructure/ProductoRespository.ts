@@ -1,12 +1,13 @@
+import { QueryError } from 'mysql2'
 import { database } from './Database'
 import { Producto } from '../domain/Cars-Producto'
 import { ProductoRepository } from "../domain/Cars-repository"
-import { QueryError } from 'mysql2'
 
 
-export class carsRepositori implements ProductoRepository {
+
+export class CarsRepository implements ProductoRepository {
   
-  async GetCars(): Promise<Producto[] | null> {
+  async getCars(): Promise<Producto[] | null> {
     const mysql = new database();
     return await new Promise((resolve, reject) => {
         mysql.connection.query("SELECT * FROM Estacionamiento.Autos", (error: QueryError, rows: Producto[]) => {
